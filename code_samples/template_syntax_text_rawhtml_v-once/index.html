@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - Template Syntax - Text, rawHtml and v-once</title>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script src='app.js'></script>
+		<style>
+			
+			table {
+				width: 600;
+			}
+			
+			th {
+				text-align: left;
+			}
+			
+			td {
+				text-align: left;
+				width: 200px;
+			}
+			
+			input {
+				width: 100%
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<h3>v-once means there is no dynamic update</h1>
+		<h3>v-html means your text gets evaluated</h1>
+		<div id='app'>
+			<table>
+				<tr>
+					<th>Text</th>
+					<th>Text with v-once</th>
+					<th>rawHtml</th>
+				</tr>
+				<tr>
+					<td>{{ msg }}</td>
+					<td v-once>{{ msg }}</td>
+					<td v-html="msg"></td>
+				</tr>
+				<tr>
+					<td colspan=3><input v-model="msg" /></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

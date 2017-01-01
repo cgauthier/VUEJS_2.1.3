@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - LifeCycle 101</title>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script src='app.js'></script>
+	</head>
+	<body>
+		<h1>LifeCycle of this app</h1>
+		<p>Between the code and its comments, the list under the button and the debugger, you can get a rather interesting view of the lifecycle of a Vue.js app.</p>
+		<div id='app'>
+			<p><button v-on:click="destroyApp">Destroy App</button></p>
+			<ol>
+				<li v-for="item in lifecycle">
+					{{ item.text}}
+				</li>
+			</ol>
+			<p>{{ message }}</p>
+			<input v-model="message" />
+		</div>
+	</body>
+</html>

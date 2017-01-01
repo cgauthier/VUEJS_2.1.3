@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - Template Syntax - Computed Watchers with Buffering and Ajax</title>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script src='../../js_libs/lodash-4.17.2/lodash.js'></script>
+		<script src='../../js_libs/axios-0.15.2/dist/axios.js'></script>
+		<script src='app.js'></script>
+		<style>
+			table {
+				width: 600px;
+			}
+			
+			td {
+				vertical-align: top;
+			}
+			
+			input {
+				width: 80%
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h3>This demo uses axios for ajax call and lodash for buffering input and capitalizing the response.</h3>
+		<div id='app'>
+			<table>
+				<tr>
+					<td><h2>Answer a yes/no question</h2></td>
+				</tr>
+				<tr>
+					<td><input v-model="question" placeholder="type your question?" />&nbsp;<button v-on:click="clearField">Clear Field</button></td>
+				</tr>
+				<tr>
+					<td>Answer: {{ answer }}</br><br/>
+						<img v-bind:src='src' id="answerimage" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

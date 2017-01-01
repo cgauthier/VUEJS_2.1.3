@@ -1,0 +1,11 @@
+{
+	"data": [
+        { "name": "Chuck Norris", "power": "Infinity" },
+        { "name": "Bruce Lee", "power": 9000 },
+        { "name": "Jackie Chan", "power": 7000 },
+        { "name": "Jet Li", "power": 8000 },
+        { "name": "Dwayne Johnson", "power": 10000 },
+        { "name": "Sylvester Stallone", "power": 10000 },
+        { "name": "Jason Statham", "power": 8000 }
+    ]
+}

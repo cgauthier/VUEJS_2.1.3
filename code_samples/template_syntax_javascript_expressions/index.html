@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - Template Syntax - JavaScript Expressions</title>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script src='app.js'></script>
+		<style>
+			
+			table {
+				width: 600;
+			}
+			
+			th {
+				text-align: left;
+			}
+			
+			td {
+				text-align: left;
+				width: 200px;
+			}
+			
+			input {
+				width: 100%
+			}
+			
+		</style>		
+	</head>
+	<body>
+		<h3>A quick demo on JavaScript expressions</h3>
+		<h3>Vue only allows expressions to be evaluated and executed. Statements are not supported.</h3>	
+		<h3>The expression used to determine a person's age based on their date of birth is as follows:</h3>
+		<p><code>{{ (d && m && y) ? ( Math.floor((Date.now() - new Date(y + "/" + m + "/" + d)) / 31557600000) ? Math.floor((Date.now() - new Date(y + "/" + m + "/" + d)) / 31557600000) + " yrs old." : "Failing Validation" ) : "Failing Validation"  }}</code></p>	
+		<h4>Enter your date of birth</h4>
+		<div id='app'>
+			<table>
+				<tr>
+					<th>Day</th>
+					<th>Month</th>
+					<th>Year</th>
+				</tr>
+				<tr>
+					<td><input v-model="d" /></td>
+					<td><input v-model="m" /></td>
+					<td><input v-model="y" /></td>
+				</tr>
+			</table>
+			<h1>{{ (d && m && y) ? ( Math.floor((Date.now() - new Date(y + "/" + m + "/" + d)) / 31557600000) ? Math.floor((Date.now() - new Date(y + "/" + m + "/" + d)) / 31557600000) + " yrs old." : "Failing Validation" ) : "Failing Validation"  }}</h1>
+		</div>
+	</body>
+</html>

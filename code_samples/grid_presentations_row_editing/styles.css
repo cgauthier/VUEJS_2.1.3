@@ -1,0 +1,146 @@
+button {
+	background-color: rgb(51, 122, 183);
+	border: 1px solid rgb(61, 133, 193);
+  	border-radius: 15px;
+  	padding: 6px 12px;
+  	color: white;
+  	cursor: pointer;
+  	font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+body {
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 14px;
+  color: #444;
+}
+
+table {
+  border: 2px solid #42b983;
+  border-radius: 3px;
+  background-color: #fff;
+  border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+	/* display: block; */
+	height: 20px;
+}
+
+tbody, thead tr {
+	margin: 0px;
+}
+
+tbody {
+    height: 170px; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* display: block; */	   
+}
+
+th {
+  background-color: #42b983;
+  color: rgba(255,255,255,0.66);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+td {
+  background-color: #f9f9f9;
+  vertical-align: top;
+}
+
+th, td {
+  padding: 10px 20px;
+  overflow: hidden; 
+}
+
+td.title, th.title {
+	width: 350px;	
+	min-width:350px; 
+	text-align: left;
+
+}
+
+tbody td.title, tbody td.faculty {
+	padding-left: 30px;
+}
+
+td.start_time, th.start_time {
+	width: 80px;	
+	min-width:80px; 
+	text-align: center;
+}
+
+td.track, th.track {
+	width: 180px;
+	min-width:180px;	 
+	text-align: center;
+}
+
+td.session, th.session {
+	width: 150px;
+	min-width:150px;
+	text-align: center;
+}
+
+td.faculty, th.faculty {
+	width: 150px;
+	min-width:150px;
+	text-align: left;
+}
+
+td.room, th.room {
+	width: 140px;
+	min-width:140px;
+	text-align: center;
+}
+
+td.day, th.day {
+	width: 50px;
+	min-width:50px;
+	text-align: center;
+}
+
+td.edit, th.edit {
+	width: 70px; 
+	min-width:70px;
+	text-align: center;
+	font-family: Helvetica Neue, Arial, sans-serif;
+	cursor:pointer;
+}
+
+input[type='text'] {
+	border-radius: 15px;
+	padding: 6px 12px;
+	width:95%;
+	font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+
+th.active {
+  color: #fff;
+}
+
+th.active .arrow {
+  opacity: 1;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  opacity: 0.66;
+}
+
+.arrow.asc {}
+
+.arrow.dsc {}

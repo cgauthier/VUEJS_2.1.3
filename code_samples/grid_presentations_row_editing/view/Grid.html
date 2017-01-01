@@ -1,0 +1,40 @@
+<script type="text/x-template" id="grid-template">
+	<table>
+		<thead>
+			<tr>
+				<th v-for="key in columns"
+							@click="sortBy('filterField_'+key.field)"
+							:class="[{ active: sortKey == key.field }, key.cls] " >
+					{{ key.title }}
+					<span :class="{arrow:key.type!='action', asc:sortOrders['filterField_'+key.field] == 1, desc:sortOrders['filterField_'+key.field] == -1, 'fa-sort-asc fa':sortOrders[key.field] == 1 && key.type == 'data', 'fa-sort-desc fa':sortOrders[key.field] == -1 && key.type == 'data'}"></span>
+				</th>
+			</tr>
+			<tr>
+				<td v-for="key in columns" :class="key.cls">
+					<input v-if="key.type!='action'" type='text' v-bind:id="'filterField_' + key.field" v-model="$data['filterField_' + key.field]"/>
+					<button v-if="key.type=='action'" v-on:click="resetFields" >Reset</button>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="entry in filteredData" :id="'row_' + entry['_id']">
+				<td v-if="key.type!='custom'" v-for="key in columns" :class='key.cls'>
+					<!-- span v-if="edit===false" -->
+					<span v-if="entry['_rowEdit']===false">
+						{{ (key.type == "data" ) ?  entry[key.field] : "" }}<span v-if="key.type=='action'" v-on:click="enableRowEditing(entry)" title="edit row" v-bind:class="{'fa-edit fa':key.field =='edit'}"></span>	
+					</span>
+					<span v-if="entry['_rowEdit']===true">
+						<input type="text" :id="key.field + '_' + entry['_id']" v-if="key.type!='action'" :value="(key.type == 'data' ) ?  entry[key.field] : ''" />
+						<span v-if="key.type=='action'" title="cancel row editing" v-bind:class="{'fa-undo fa':key.field =='edit'}" v-on:click="cancelRowEditing(entry)" style="padding-right:5px;"></span>
+						<span v-if="key.type=='action'" title="save row data" v-bind:class="{'fa-save fa':key.field =='edit'}" v-on:click="saveRowEditing(entry)" ></span>
+					</span>
+				</td>
+				<td v-else>
+					<div v-if="key.field='faculty'" v-for="item in entry.faculty.data">
+						{{ item.name }}
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</script>

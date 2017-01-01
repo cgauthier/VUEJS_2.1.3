@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vue JS 2.1.3 - Bootstrap and Vue JS - Event Methods Computed - Vote App</title>
+		<link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
+		
+		<style>
+			.list-item-dish {
+				width: 100px;
+				display: inline-block;
+			}
+			
+			.list-item-vote {
+				width: 80px;
+				display: inline-block;
+				text-align: right;
+				margin-right: 10px;
+			}
+			
+			.vote {
+				font-weight: bold;
+				margin: 20px 0px 0px 10px;
+			}
+			
+			.delete {
+				margin-left: 10px;
+			}
+			
+		</style>
+		
+		<script src='../../js_libs/jquery-3.1.1.min.js'></script>
+		<script src='../../bootstrap-3.3.7-dist/js/bootstrap.min.js'></script>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script src='app.js'></script>
+	</head>
+	<body class='container' >
+		<div id='app'>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			  	<div class="title-with-tool">
+			  		<h1 class="panel-title">Junk Food Vote App</h1>
+			  	</div>
+			  	<div class="panel-body">
+				    <ul class='list-group'>
+				    	<li v-for="item in sortedFood" class="list-group-item">
+				    		<span class="list-item-dish">{{ item.dish }}</span>
+				    		<span class="list-item-vote">{{ item.vote }}</span>
+				    		<button class="btn btn-primary" v-on:click="{{upvote(item)}}">Vote</button>
+						</li>
+				    </ul>
+					<div class='delete'>press the 'delete' key to reset the vote app</div>
+			    	<div class='vote'>{{ popular }}</div>				    
+			  	</div>
+			  </div>
+		</div>
+	</body>
+</html>

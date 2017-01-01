@@ -1,0 +1,32 @@
+<script type="text/x-template" id="grid-template">
+	<table>
+		<thead>
+			<tr>
+				<th v-for="key in columns"
+							@click="sortBy('filterField_'+key.field)"
+							:class="[{ active: sortKey == key.field }, key.cls] " >
+					{{ key.title }}
+					<span :class="{arrow:key.type!='action', asc:sortOrders['filterField_'+key.field] == 1, desc:sortOrders['filterField_'+key.field] == -1, 'fa-sort-asc fa':sortOrders[key.field] == 1 && key.type == 'data', 'fa-sort-desc fa':sortOrders[key.field] == -1 && key.type == 'data'}"></span>
+				</th>
+			</tr>
+			<tr>
+				<td v-for="key in columns" :class="key.cls">
+					<input v-if="key.type!='action'" type='text' v-bind:id="'filterField_' + key.field" v-model="$data['filterField_' + key.field]"/>
+					<button v-if="key.type=='action'" v-on:click="resetFields" >Reset</button>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="entry in filteredData">
+				<td v-if="key.type!='custom'" v-for="key in columns" :class='key.cls'>
+					{{ (key.type == "data" ) ?  entry[key.field] : "" }}<span v-if="key.type=='action'" v-bind:class="{'fa-cog fa':key.field =='edit'}"></span>
+				</td>
+				<td v-else >
+					<div v-if="key.field='faculty'" v-for="item in entry.faculty.data">
+						{{ item.name }}
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</script>

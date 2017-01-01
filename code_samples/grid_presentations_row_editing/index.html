@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - Grid Presentations Row Editing</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/font-awesome.css" />
+		<script type='text/javascript' src='../../js_libs/lib.js'></script>
+		<script data-main="app" src='../../js_libs/requirejs-2.3.2/require.js'></script>
+	</head>
+	<body>
+		<h1>Presentations</h1>
+		<div id="app">
+		  <grid
+		    :data="gridData"
+		    :columns="gridColumns"
+		    :filter-key="searchQuery">
+		  </grid>
+		</div>		
+	</body>
+</html>

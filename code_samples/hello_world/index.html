@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - Hello World</title>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script>
+
+			var scope = {
+				window: window,
+				Vue: Vue
+			};
+
+			window.onload = launch.bind(scope);
+
+			function launch() {
+				var V = this.Vue;
+				var window = this.window;
+				
+				var app = new V({
+					el: '#app',
+					data: {
+						message: 'Hello Vue with onload and an inner Scope!!'
+					}
+				});				
+			}
+		</script>
+	</head>
+	<body>
+		<div id='app'>
+			{{ message }}
+		</div>
+	</body>
+
+</html>

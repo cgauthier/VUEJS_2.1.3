@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - v-show Directive</title>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script src='app.js'></script>
+	</head>
+	<body>
+		<div id='app'>
+			<h1>Send a message for help!</h1>
+			<textarea v-model="message"></textarea>
+			<button id='messageBtn' v-show="message">Send your message to our allies!</button>
+			<h2>{{ output }}</h2>
+		</div>
+	</body>
+
+</html>

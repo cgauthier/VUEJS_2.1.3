@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+	<head>
+		<title>Vue JS 2.1.3 - Bootstrap and Vue JS with v-for for List Rendering</title>
+		
+		<link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
+		<script src='../../js_libs/jquery-3.1.1.min.js'></script>
+		<script src='../../bootstrap-3.3.7-dist/js/bootstrap.min.js'></script>
+		<script src='../../js_libs/vue-2.1.3/dist/vue.js'></script>
+		<script src='app.js'></script>
+	</head>
+	<body>
+		<div id='app' class='container'>
+			<h1>Bootstrap and Vue JS side by side<br/>Multiplication Table -  Factor of: {{ factor }}</h1>
+			<p>Factor: <input type='text' v-model="factor" /></p>
+			<ul class='list-group'>
+				<li v-for="i in 11" class="list-group-item">
+					{{ i-1 }} times {{ factor }} equals {{ (i-1) * factor }}
+  				</li>
+			</ol>
+		</div>
+	</body>
+</html>
