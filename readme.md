@@ -1,6 +1,6 @@
 #VUE JS 2.1.3 - Code Samples
 
-Live Code: http://www.claudegauthier.net/demos/VUEJS/
+Live Code: http://www.claudegauthier.net/demos/VUEJS213/
 
 The purpose of this repository is to store code samples of Vue JS apps.  This is a new library for me and I've decided to learn it, because I believe it is better than Angular, Angular 2 and React JS.
 
